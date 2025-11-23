@@ -9,11 +9,13 @@ from discord.ext import commands
 TOKEN = "TOKEN_HERE"
 
 intents = discord.Intents.default()
+intents.message_content = True   # required for commands
+
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-@bot.event
-async def on_ready():
-   # This is triggered when the bot logs in successfully.
+# @bot.event
+# async def on_ready():
+    # This is triggered when the bot logs in successfully.
 
 @bot.command()
 async def hello(ctx):
